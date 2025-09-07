@@ -24,10 +24,10 @@ const buttonArray = (asideButtons) => {//Fetch aside buttons data
 
         const createAsideButton = document.createElement('h1')
         createAsideButton.innerHTML = `
-        <h1 class="h-10 w-full">${asideButton.category_name}</h1>
+        <h1 class="h-10 w-full" onclick=plantsBYCatagories(${asideButton.id})>${asideButton.category_name}</h1>
                 `
         const allPlantsSideButton = document.getElementById('dynamicSideButtons').append(createAsideButton)
-        plantsBYCatagories(asideButton.id)  //calling for get all buttons id
+
 
     }
 }
@@ -58,7 +58,6 @@ const allTreeloadScreen = (allPlants) => {
 }
 
 
-
 // Plants by Catagories
 
 const plantsBYCatagoriesApi = () => {
@@ -68,11 +67,36 @@ const plantsBYCatagoriesApi = () => {
 }
 plantsBYCatagoriesApi()
 
-const plantsBYCatagories = (id) => {
+const plantsBYCatagories = async (id) => {
     fetch(`https://openapi.programming-hero.com/api/category/${id}`).
-        then((res) => res.json()).then((res) => console.log("rescalling", res))
+        then((res) => res.json()).then((res) => loadCatagoriCardsOndisplay(res.plants))
 
 }
+
+// show Catagori wise cards on display
+const loadCatagoriCardsOndisplay = (cards) => {
+    for (const plantCard of cards) {
+        cardsSection.innerHTML = ""
+
+        const createCard = document.createElement('div')
+        createCard.innerHTML = `
+            <div class="card w-73 h-auto py-2 px-2 flex flex-col space-y-1 bg-white">
+                <img class="h-48 w-full rounded-md" src=${plantCard.image} alt="" srcset="">
+                    <h1 class="font-bold w-full">${plantCard.name}</h1>
+                    <p class=" text-[12px] h-25 text-justify">${plantCard.description}</p>
+                    <div class="plantTypeAndPrice w-full flex items-center justify-between mb-5">
+                        <p class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
+                        <h1><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantCard.price}</h1>
+                    </div>
+                    <button class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
+            </div>
+`
+        document.getElementById('cardsSection').append(createCard)
+
+    }
+
+}
+
 
 
 
