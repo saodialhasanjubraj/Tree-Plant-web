@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Plant</title>
+    <!-- tailwind and DaisyUi link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awsome Cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font link (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container w-full max-w-308 mx-auto" id="container">
+        <header>
+
+            <nav class="navbar bg-base-100 shadow-sm justify-between bg-[#15803D] text-white h-20 items-center">
+                <a class="btn btn-ghost text-xl">Green Earth</a>
+                <ul class="flex items-center justify-between w-80">
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Gallery</a> </li>
+                    <li> <a href="#">Plan a tree</a> </li>
+                </ul>
+                <button class="btn btn-active btn-accent bg-[#FACC15] border-none rounded-full">Accent</button>
+            </nav>
+            <div class="heroSeciton flex items-center justify-between bg-[#CFF0DC]">
+                <img src="/assets/hero-leaf1.png" class="heroLeft1 h-60 w-90"></img>
+                <div class="textBox w-125 flex flex-col items-center justify-center space-y-3">
+                    <h1 class="text-4xl font-bold">Plant a Tree, Grow a Future</h1>
+                    <p class="text-justify">Join our mission to plant 1 million trees and make the Earth <br> greener
+                        for future generations.</p>
+                    <button class="btn btn-active btn-warning">Get Involved</button>
+
+                </div>
+                <img src="/assets/hero-leaf2.png" class="heroLeft2 h-60 w-90"></img>
+            </div>
+
+            <div class="bg-[#F0FDF4] ChooseYourTrees w-full text-center text-3xl font-semibold mt-20 pb-10 border-b-[1px]"
+                id="ChooseYourTrees">
+                Choose Your Trees</div>
+            <!-- header End -->
+        </header>
+
+        <main>
+            <section class="cardsAsideBarCartsDiv bg-[#F0FDF4] flex items-start justify-between" id="subContainer">
+
+                <aside class="w-50 allPlantsSideButton flex flex-col ml-3" id="allPlantsSideButton">
+                    <h1 class="h-10 w-full">All Trees</h1>
+                    <div class="dynamicSideButtons flex flex-col w-full" id="dynamicSideButtons"></div>
+                </aside>
+                <!-- aside End here -->
+
+                <section class="cardsSection w-full grid grid-cols-1 gap-x-3 space-y-3 lg:grid-cols-3"
+                    id="cardsSection">
+                    <!-- dynamic data come -->
+                </section>
+                <!-- main End here -->
+                <div class="rightSide w-50 bg-rose-600 h-20" id="rightSide">
+
+                </div>
+                <!-- rightSide End here -->
+            </section>
+
+
+            <section class="AboutTheCampaign" id="AboutTheCampaign">
+                <h1>About the Campaign</h1>
+                <div class="textImageBox">
+                    <img src=".assets/about.png" alt="" srcset="">
+                    <div class="textBox">
+                        <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change.
+                            Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you
+                            help restore forests, create habitats for wildlife, and combat global warming.</p>
+                        <ul>
+                            <li>Restoration of natural habitats</li>
+                            <li>Improvement of air quality</li>
+                            <li> for local communities</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- main End here -->
+        </main>
+        <!------------------------------------ SubContainer End here (aside, main, rightSide) ----------------------------------------------->
+
+    </div> <!-- Container End here  -----------------Total-End -->
+
+
+
+    <script src="web.js"></script>
+</body>
+
+</html>
