@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="container w-full max-w-308 mx-auto bg-[#F0FDF4]" id="container">
+<body class="bg-[#F0FDF4]">
+    <div class="container w-full max-w-318 mx-auto bg-[#F0FDF4]" id="container">
         <header>
 
             <nav class="navbar bg-base-100 shadow-sm justify-between bg-[#15803D] text-white h-20 items-center">
@@ -48,13 +48,13 @@
                 <img src="/assets/hero-leaf2.png" class="heroLeft2 h-60 w-90"></img>
             </div>
 
-            <div class="bg-[#F0FDF4] ChooseYourTrees w-full text-center text-3xl font-semibold mt-20 pb-10 border-b-[1px]"
+            <div class="bg-[#F0FDF4] ChooseYourTrees w-full text-center text-3xl font-semibold mt-20 pb-10"
                 id="ChooseYourTrees">
                 Choose Your Trees</div>
             <!-- header End -->
         </header>
 
-        <main>
+        <main class="w-full px-5">
             <section class="cardsAsideBarCartsDiv flex items-start justify-between" id="subContainer">
 
                 <aside class="w-50 allPlantsSideButton flex flex-col ml-3" id="allPlantsSideButton">
@@ -74,7 +74,6 @@
                 <!-- rightSide End here -->
             </section>
 
-
             <section class="AboutTheCampaign flex flex-col items-center w-208 mx-auto" id="AboutTheCampaign">
                 <h1 class="text-3xl font-bold mt-10 mb-10">About the Campaign</h1>
                 <div class="textImageBox flex items-center justify-between gap-15">
@@ -92,6 +91,53 @@
                     </div>
                 </div>
             </section>
+
+            <seciton
+                class="ourImpact w-full h-100 flex items-center justify-center flex-col mt-20 mb-5 bg-[#CFF0DC] px-10">
+                <h1 class="font-bold text-3xl mb-10">Our Impact</h1>
+                <div class="ourImpactCards flex items-center justify-between w-full">
+                    <div
+                        class="ourImpactCard bg-white rounded-xl w-90 h-30 flex items-center justify-center gap-y-0.5 flex-col">
+                        <h1 class="font-bold mb-2">500K+</h1>
+                        <p>Trees Planted</p>
+                    </div>
+                    <div
+                        class="ourImpactCard bg-white rounded-xl w-90 h-30 flex items-center justify-center gap-y-0.5 flex-col">
+                        <h1 class="font-bold mb-2">500K+</h1>
+                        <p>Trees Planted</p>
+                    </div>
+                    <div
+                        class="ourImpactCard bg-white rounded-xl w-90 h-30 flex items-center justify-center gap-y-0.5 flex-col">
+                        <h1 class="font-bold mb-2">500K+</h1>
+                        <p>Trees Planted</p>
+                    </div>
+                </div>
+            </seciton>
+
+            <section class="plantATreeToday w-full h-137.5 bg-[#166534] flex flex-col items-center justify-center">
+                <h1 class="text-4xl text-white font-bold mb-10">Plant a Tree Today</h1>
+                <div
+                    class="formBox flex items-center flex-col justify-between gap-2 h-80 bg-[#15803D] w-200 px-10 py-12 rounded-md">
+                    <input type="text" placeholder="Your name" class="input w-full" />
+                    <input type="email" placeholder="Your email address" class="input w-full" />
+                    <div class="dropdown w-full">
+                        <div tabindex="0" role="button"
+                            class="btn m-1 w-full border-none flex items-center justify-between px-10">Number of Trees
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 p-2 shadow-sm w-full">
+                            <li><a>50</a></li>
+                            <li><a>100</a></li>
+                            <li><a>150</a></li>
+                            <li><a>200</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-warning w-full rounded-lg border-none">Donate Now</button>
+                </div>
+            </section>
+            <footer class="w-full bg-[#14532D] text-center text-white py-1">
+                <h1>© 2025 Green Earth. All Rights Reserved.</h1>
+            </footer>
             <!-- main End here -->
         </main>
         <!------------------------------------ SubContainer End here (aside, main, rightSide) ----------------------------------------------->

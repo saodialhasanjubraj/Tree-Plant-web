@@ -3,12 +3,12 @@ const cardsSection = document.getElementById('cardsSection')
 
 
 //load all trees in cards container////
-// const allTreesgetApi = () => {  //allPlants api
-//     fetch('https://openapi.programming-hero.com/api/plants')
-//         .then((data) => data.json())
-//         .then((allPlants) => allTreeloadScreen(allPlants.plants))
-// }
-// allTreesgetApi()  //api call
+const allTreesgetApi = () => {  //allPlants api
+    fetch('https://openapi.programming-hero.com/api/plants')
+        .then((data) => data.json())
+        .then((allPlants) => allTreeloadScreen(allPlants.plants))
+}
+allTreesgetApi()  //api call
 
 //Fetch aside buttons data
 const asideButtonsGet = () => {//Fetch aside buttons data
