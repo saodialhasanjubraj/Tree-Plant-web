@@ -10,3 +10,10 @@
 .yellow {
     background-color: #FACC15;
 }
+
+.active {
+    background-color: rgb(233, 200, 140);
+    color: black;
+ transition: .3s;
+ border-radius: 0px 10px 10px 0px;
+}
