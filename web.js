@@ -1,7 +1,6 @@
 // Global Scope/////////////////=====
 const cardsSection = document.getElementById('cardsSection')
 
-
 //load all trees in cards container////
 const allTreesgetApi = () => {  //allPlants api
     fetch('https://openapi.programming-hero.com/api/plants')
@@ -35,7 +34,6 @@ const allTreeloadScreen = (allPlants) => {
     cardsSection.innerHTML = ""
     for (const plantCard of allPlants) {
         // console.log("planted card calling:", plantCard);
-
         const createCard = document.createElement('div')
         createCard.innerHTML = `
             <div class="card w-73 h-auto py-2 px-2 flex flex-col space-y-1 bg-white">
@@ -51,10 +49,7 @@ const allTreeloadScreen = (allPlants) => {
 `
         document.getElementById('cardsSection').append(createCard)
     }
-
 }
-
-
 
 // Plants by Catagories
 const plantsBYCatagories = (id) => {
@@ -64,9 +59,10 @@ const plantsBYCatagories = (id) => {
 
 // show Catagori wise cards on display
 const loadCatagoriCardsOndisplay = (cards) => {
+    cardsSection.innerHTML = ""   // Remember:>> Always card parent div take place outside (for) methood
     for (const card of cards) {
-        // console.log(card);
-        cardsSection.innerHTML = ""
+        console.log("catagoricard", card);
+        cardsSection.innerHTML = ""   //!কার্ডের ইনার এইচটিএমএল লুপের ভিতর রাখরে শেষের টা দেখায় কেন?
         const createCard = document.createElement('div')
         createCard.innerHTML = `
             <div class="card w-73 h-auto py-2 px-2 flex flex-col space-y-1 bg-white">
@@ -84,7 +80,6 @@ const loadCatagoriCardsOndisplay = (cards) => {
     }
 
 }
-
 
 //All tree calls
 const allTrees = () => {
