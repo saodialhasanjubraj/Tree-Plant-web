@@ -23,13 +23,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body class="bg-[#F0FDF4]">
     <div class="container w-full max-w-318 mx-auto bg-[#F0FDF4]" id="container">
         <header>
 
             <nav class="navbar bg-base-100 shadow-sm justify-between bg-[#15803D] text-white h-20 items-center">
                 <a class="btn btn-ghost text-xl">Green Earth</a>
-                <ul class="flex items-center justify-between w-80">
+                <ul class="lg:flex items-center justify-between w-80 hidden">
                     <li> <a href="#">About</a> </li>
                     <li> <a href="#">Gallery</a> </li>
                     <li> <a href="#">Plan a tree</a> </li>
@@ -37,15 +38,15 @@
                 <button class="btn btn-active btn-accent bg-[#FACC15] border-none rounded-full">Plant a Tree</button>
             </nav>
             <div class="heroSeciton flex items-center justify-between bg-[#CFF0DC]">
-                <img src="/assets/hero-leaf1.png" class="heroLeft1 h-60 w-90"></img>
+                <img src="/assets/hero-leaf1.png" class="heroLeft1 h-60 w-90 lg:block hidden"></img>
                 <div class="textBox w-125 flex flex-col items-center justify-center space-y-3">
-                    <h1 class="text-4xl font-bold">Plant a Tree, Grow a Future</h1>
+                    <h1 class="lg:text-4xl text-2xl font-bold ">Plant a Tree, Grow a Future</h1>
                     <p class="text-justify">Join our mission to plant 1 million trees and make the Earth <br> greener
                         for future generations.</p>
-                    <button class="btn btn-active btn-warning">Get Involved</button>
+                    <button class="btn btn-active btn-warning lg:mb-0 mb-5">Get Involved</button>
 
                 </div>
-                <img src="/assets/hero-leaf2.png" class="heroLeft2 h-60 w-90"></img>
+                <img src="/assets/hero-leaf2.png" class="heroLeft2 h-60 w-90 lg:block hidden"></img>
             </div>
 
             <div class="bg-[#F0FDF4] ChooseYourTrees w-full text-center text-3xl font-semibold mt-20 pb-10"
@@ -68,8 +69,12 @@
                     <!-- dynamic data come -->
                 </section>
                 <!-- main End here -->
-                <div class="rightSide w-50 bg-rose-600 h-20" id="rightSide">
+                <div class="rightSide w-50 bg-white h-[70vh] overflow-y-scroll flex flex-col items-center"
+                    id="rightSide">
+                    <h1 class="font-bold text-xl border-b-2 w-full text-center">Your Cart</h1>
+                    <div class="showCart" id="showcart">
 
+                    </div>
                 </div>
                 <!-- rightSide End here -->
             </section>
@@ -98,18 +103,18 @@
                 <div class="ourImpactCards flex items-center justify-between w-full">
                     <div
                         class="ourImpactCard bg-white rounded-xl w-90 h-30 flex items-center justify-center gap-y-0.5 flex-col">
-                        <h1 class="font-bold mb-2">500K+</h1>
+                        <h1 class="font-bold mb-2 text-2xl">500K+</h1>
                         <p>Trees Planted</p>
                     </div>
                     <div
                         class="ourImpactCard bg-white rounded-xl w-90 h-30 flex items-center justify-center gap-y-0.5 flex-col">
-                        <h1 class="font-bold mb-2">500K+</h1>
-                        <p>Trees Planted</p>
+                        <h1 class="font-bold mb-2 text-2xl">120+</h1>
+                        <p>Communities Involved</p>
                     </div>
                     <div
                         class="ourImpactCard bg-white rounded-xl w-90 h-30 flex items-center justify-center gap-y-0.5 flex-col">
-                        <h1 class="font-bold mb-2">500K+</h1>
-                        <p>Trees Planted</p>
+                        <h1 class="font-bold mb-2 text-2xl">30+</h1>
+                        <p>Countries Reached</p>
                     </div>
                 </div>
             </seciton>
@@ -157,7 +162,7 @@
                 </div>
             </dialog>
         </main>
-        <!------------------------------------ SubContainer End here (aside, main, rightSide) ----------------------------------------------->
+
 
     </div> <!-- Container End here  -----------------Total-End -->
 
