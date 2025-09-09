@@ -25,7 +25,6 @@ const buttonArray = (asideButtons) => {//*Show all aside buttons
                 `
         document.getElementById('dynamicSideButtons').append(createAsideButton)   //show card on display
     }
-
 }
 
 //* All trees data load
@@ -42,12 +41,30 @@ const allTreeloadScreen = (allPlants) => {
                         <p onclick="loadPlantDetail(${plantCard.id})"  class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
                         <h1><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantCard.price}</h1>
                     </div>
-                    <button class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
+                    <button onclick="addToCart()" id="addToCart" class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
             </div>
 `
         document.getElementById('cardsSection').append(createCard)
     }
 }
+
+// * add to cart function 
+const addToCart = () => {
+    // const cartId = document.getElementById('addToCart')
+    displayAddToCart()
+}
+const displayAddToCart = (carts) => {
+    console.log(carts);
+    const cartDiv = document.createElement('div')
+    cartDiv.innerHTML = `
+    <h1></h1> 
+       `
+    const showcart = document.getElementById('showcart')
+    showcart.append(cartDiv)
+
+
+}
+
 
 //*load tree card details
 const loadPlantDetail = async (id) => {
@@ -59,7 +76,6 @@ const loadPlantDetail = async (id) => {
 }
 
 const showModalOndisplay1 = (card) => {
-    console.log(card, "line num 66");
     document.getElementById('showModalContainer').innerHTML = ""
     const createDiv = document.createElement('div')
     createDiv.innerHTML = `   
@@ -78,12 +94,10 @@ const showModalOndisplay1 = (card) => {
     document.getElementById('my_modal_1').showModal()  //call Motal funciton 
 }
 
-
 const removeActivClassAll = () => {
     const removeActiveall = document.querySelectorAll(".removeActivClass")
     removeActiveall.forEach(btn => btn.classList.remove("active")) //! remove active class
 }
-
 
 // *Plants by Catagories
 const plantsBYCatagories = (id) => {  //*onclick fuction call in buttonArray Function and get (id) from there
@@ -93,7 +107,6 @@ const plantsBYCatagories = (id) => {  //*onclick fuction call in buttonArray Fun
             removeActivClassAll()   //! remove all active class
             const clickBtn = document.getElementById(`asideButton_${id}`)
             clickBtn.classList.add('active')  //* add active call specific id that clicked
-            // console.log(clickBtn);
         })
 }
 
@@ -101,8 +114,6 @@ const plantsBYCatagories = (id) => {  //*onclick fuction call in buttonArray Fun
 const loadCatagoriCardsOndisplay = (cards) => {
     cardsSection.innerHTML = ""   // *Remember:>> Always card parent div take place outside (for) methood
     for (const card of cards) {
-        // console.log(card)
-
         const createCard = document.createElement('div')
         createCard.innerHTML = `
             <div class="card w-73 h-auto py-2 px-2 flex flex-col space-y-1 bg-white">
@@ -113,12 +124,11 @@ const loadCatagoriCardsOndisplay = (cards) => {
                         <p class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${card.category}</p>
                         <h1><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${card.price}</h1>
                     </div>
-                    <button class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
+                    <button onclick="addToCart()" id="addToCart" class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
             </div>
 `
         document.getElementById('cardsSection').append(createCard)
     }
-
 }
 
 
@@ -140,28 +150,17 @@ const allTrees = () => {
                         <p onclick="loadPlantDetail(${plantCard.id})"  class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
                         <h1><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantCard.price}</h1>
                     </div>
-                    <button class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
+                    <button onclick="addToCart()" id="addToCart"  class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
             </div>
 `
                 document.getElementById('cardsSection').append(createCard)
             }
         })
-
 }
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 buttonArray()    //কেন সাইডের বাটন গুলোকে সবার শেষে কল করা হল??
 allTreeloadScreen()  //all cards load
-
-
-
-
-
-
-
-
-
 
 
