@@ -29,18 +29,17 @@ const buttonArray = (asideButtons) => {//*Show all aside buttons
 }
 
 //* All trees data load
-const my_modal_1 = document.getElementById('my_modal_1')
 cardsSection.innerHTML = ""
 const allTreeloadScreen = (allPlants) => {
     for (const plantCard of allPlants) {
         const createCard = document.createElement('div')
         createCard.innerHTML = `
             <div class="card w-73 h-auto py-2 px-2 flex flex-col space-y-1 bg-white">
-                <img class="h-48 w-full rounded-md" src=${plantCard.image} alt="" srcset="">
+                <img class="h-48 w-full rounded-md" onclick="loadPlantDetail(${plantCard.id})"  src=${plantCard.image} alt="" srcset="">
                     <h1 onclick="loadPlantDetail(${plantCard.id})" class="font-bold w-full text-red-300 hover:cursor-pointer hover:text-red-600">${plantCard.name}</h1>
                     <p class=" text-[12px] h-25 text-justify">${plantCard.description}</p>
                     <div class="plantTypeAndPrice w-full flex items-center justify-between mb-5">
-                        <p class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
+                        <p onclick="loadPlantDetail(${plantCard.id})"  class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
                         <h1><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantCard.price}</h1>
                     </div>
                     <button class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
@@ -57,9 +56,7 @@ const loadPlantDetail = async (id) => {
     const res = await fetch(url)
     const details = await res.json()
     showModalOndisplay1(details.plants);
-   
 }
-
 
 const showModalOndisplay1 = (card) => {
     console.log(card, "line num 66");
@@ -78,7 +75,7 @@ const showModalOndisplay1 = (card) => {
                 </div>
 `
     document.getElementById('showModalContainer').append(createDiv)
-    document.getElementById('my_modal_1').showModal()
+    document.getElementById('my_modal_1').showModal()  //call Motal funciton 
 }
 
 
@@ -136,11 +133,11 @@ const allTrees = () => {
                 const createCard = document.createElement('div')
                 createCard.innerHTML = `
             <div class="card w-73 h-auto py-2 px-2 flex flex-col space-y-1 bg-white">
-                <img class="h-48 w-full rounded-md" src=${plantCard.image} alt="" srcset="">
+                <img class="h-48 w-full rounded-md" onclick="loadPlantDetail(${plantCard.id})"  src=${plantCard.image} alt="" srcset="">
                     <h1 onclick="loadPlantDetail(${plantCard.id})" class="font-bold w-full text-red-500">${plantCard.name}</h1>
-                    <p class=" text-[12px] h-25 text-justify">${plantCard.description}</p>
+                    <p   class=" text-[12px] h-25 text-justify">${plantCard.description}</p>
                     <div class="plantTypeAndPrice w-full flex items-center justify-between mb-5">
-                        <p class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
+                        <p onclick="loadPlantDetail(${plantCard.id})"  class="w-auto px-5 flex items-center h-8 bg-green-200 rounded-full text-center">${plantCard.category}</p>
                         <h1><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plantCard.price}</h1>
                     </div>
                     <button class="btn btn-active btn-accent w-full h-10">Add to Cart</button>
